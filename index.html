@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudySpace student productivity dashboard">
+  <title>StudySpace | Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="StudySpace home">
+        <span class="brand-mark">S</span>
+        <span>StudySpace</span>
+      </a>
+      <p class="nav-label">WORKSPACE</p>
+      <nav>
+        <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-link" href="#tasks"><span>✓</span> My tasks</a>
+        <a class="nav-link" href="#focus"><span>◷</span> Focus time</a>
+      </nav>
+      <div class="sidebar-note">
+        <div class="note-icon">✦</div>
+        <h3>Small steps count.</h3>
+        <p>Keep showing up for the future you want.</p>
+      </div>
+      <div class="profile">
+        <div class="avatar">S</div>
+        <div><strong>Student space</strong><small>Your personal planner</small></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="today-date">YOUR STUDY SPACE</p>
+          <h1 id="greeting">Good afternoon! <span>✦</span></h1>
+          <p class="subtitle">A little progress every day adds up.</p>
+        </div>
+        <div class="clock-card"><span class="clock-dot"></span><span id="clock">12:00:00</span></div>
+      </header>
+
+      <section class="welcome-card">
+        <div class="welcome-copy">
+          <p class="eyebrow light">YOUR DAILY CHECK-IN</p>
+          <h2>Make today<br>count.</h2>
+          <p>Focus on what matters, one task at a time.</p>
+          <a class="welcome-button" href="#tasks">View my tasks <span>→</span></a>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="sun"></div><div class="art-circle circle-one"></div>
+          <div class="art-circle circle-two"></div>
+          <div class="book book-back"></div><div class="book book-front"></div>
+          <div class="plant-pot"></div><div class="plant-stem"></div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Task statistics">
+        <article class="stat-card">
+          <div class="stat-top"><span class="stat-icon lavender">▤</span><span class="stat-caption">TOTAL TASKS</span></div>
+          <strong class="stat-number" id="total-count">0</strong><p>Tasks on your list</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span class="stat-icon mint">✓</span><span class="stat-caption">COMPLETED</span></div>
+          <strong class="stat-number" id="completed-count">0</strong><p>Look how far you've come</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span class="stat-icon peach">◷</span><span class="stat-caption">TO DO</span></div>
+          <strong class="stat-number" id="remaining-count">0</strong><p>One step at a time</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel tasks-panel" id="tasks">
+          <div class="panel-heading">
+            <div><p class="eyebrow">STAY ON TRACK</p><h2>Today's tasks</h2></div>
+            <span class="task-pill" id="task-pill">0 tasks</span>
+          </div>
+          <form id="task-form" class="task-form">
+            <label class="sr-only" for="task-input">New task</label>
+            <input id="task-input" type="text" placeholder="What do you need to do?" maxlength="100" autocomplete="off" required>
+            <button type="submit" aria-label="Add task">+</button>
+          </form>
+          <p class="form-hint" id="form-hint">Add a task to get started.</p>
+          <ul class="task-list" id="task-list"></ul>
+          <div class="empty-state" id="empty-state">
+            <span>✧</span><strong>Your list is a blank page.</strong><p>Add your first task above.</p>
+          </div>
+          <div class="progress-section">
+            <div class="progress-label"><span>Daily progress</span><strong id="progress-percent">0%</strong></div>
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+          </div>
+        </article>
+
+        <article class="panel focus-panel" id="focus">
+          <div class="panel-heading"><div><p class="eyebrow">TAKE A BREATHER</p><h2>Focus timer</h2></div><span class="focus-symbol">◷</span></div>
+          <p class="focus-description">Try a short focus session, then give yourself a break.</p>
+          <div class="timer-face"><div class="timer-inner"><strong id="timer-display">25:00</strong><span>MINUTES</span></div></div>
+          <div class="timer-controls">
+            <button class="primary-button" id="timer-start">Start focus</button>
+            <button class="secondary-button" id="timer-reset">Reset</button>
+          </div>
+          <p class="timer-status" id="timer-status" aria-live="polite">Ready when you are.</p>
+          <div class="quote-card"><span>“</span><p>You don't have to do everything today. Just begin.</p></div>
+        </article>
+      </section>
+      <footer>Made for your next little win <span>✦</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
